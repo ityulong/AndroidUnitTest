@@ -5,6 +5,8 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import testing.example.com.java_test.Calculator;
+
 import static org.junit.Assert.assertEquals;
 
 public class CalculatorTest {

@@ -1,4 +1,4 @@
-package testing.example.com;
+package testing.example.com.java_test;
 
 public class Calculator {
     public double sum(double a, double b) {
