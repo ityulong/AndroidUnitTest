@@ -2,8 +2,14 @@ package testing.example.com.mock_test;
 
 
 public class LoginPresent {
-    private UserManager mUserManager = new UserManager();
-    private PasswordValidator mValidator = new PasswordValidator();
+    private UserManager mUserManager ;
+    private PasswordValidator mValidator ;
+
+
+    public LoginPresent(UserManager userManager, PasswordValidator validator) {
+        mUserManager = userManager;
+        mValidator = validator;
+    }
 
     public void login(String username, String password) {
         if (username == null || username.length() == 0) return;

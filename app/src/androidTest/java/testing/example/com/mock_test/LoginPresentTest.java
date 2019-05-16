@@ -1,9 +1,14 @@
 package testing.example.com.mock_test;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 import org.mockito.stubbing.Answer;
 
 import testing.example.com.mock_test.UserManager.LoginCallback;
@@ -12,24 +17,27 @@ import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.anyString;
 import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.doAnswer;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 public class LoginPresentTest {
 
+    @Rule
+    public MockitoRule mRule = MockitoJUnit.rule();
+
+
+    @Mock
     private UserManager mockManager;
+    @Mock
     private PasswordValidator validator;
+
+    @InjectMocks
     private LoginPresent loginPresenter;
 
 
     @Before
     public void init() {
-        mockManager = mock(UserManager.class);
-        validator = mock(PasswordValidator.class);
-        loginPresenter = new LoginPresent();
-        loginPresenter.setUserManager(mockManager);
-        loginPresenter.setValidator(validator);
+//        loginPresenter = new LoginPresent(mockManager,validator);
     }
 
     @Test

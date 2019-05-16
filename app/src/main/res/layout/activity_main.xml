@@ -7,22 +7,24 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
     <EditText
         android:hint="Enter your name here"
-        android:id="@+id/editText"
+        android:id="@+id/et_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"/>
-    <Button
+    <EditText
+        android:hint="Enter your password here"
+        android:id="@+id/et_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Say hello!"
-        android:layout_below="@+id/editText"
-        android:onClick="sayHello"/>
+        android:layout_below="@+id/et_name"/>
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DoLogin!"
+        android:layout_below="@+id/et_password"
+        />
 
 </RelativeLayout>
